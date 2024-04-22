@@ -1,5 +1,6 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
+import { FcHome } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -9,7 +10,7 @@ function Header() {
         <Link to={"/"}>
           <h1 className="font-bold text-sm sm:text-5xl flex-wrap">
             <span className="text-teal-200">Real</span>
-            <span className="text-white">State</span>
+            <span className="text-white">State <span className="sm:text-xl">.com</span></span>
           </h1>
         </Link>
         <form className="bg-slate-100 flex items-center p-2 rounded">
