@@ -14,13 +14,20 @@ function SignUp() {
 
   const onChangeHanlder = (e) => {
     e.preventDefault();
-
-    setUser();
+    setUser({...user , [e.target.id]: e.target.value})
   };
+
 
   const handlePasswordShow = () => {
     SetShowPass(!ShowPass);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+  }
+
+ 
 
 
   return (
@@ -31,12 +38,13 @@ function SignUp() {
       <span className="text-slate-200 py-2 text-xl pfont-bold ">
         <span className="text-3xl text-teal-200">Discover</span> your property journey effortlessly! <br /> Join now for exclusive access to dream listings
       </span>
-      <form action="" className="  flex flex-col gap-3 ">
+      <form onSubmit={handleSubmit} className="  flex flex-col gap-3 ">
         <div className="  mt-5 flex flex-col ">
           <label htmlFor="username" className="text-white font-bold p-2">
             User Name
           </label>
           <input
+          onChange={onChangeHanlder}
             type="text"
             name="username"
             id="username"
@@ -49,6 +57,7 @@ function SignUp() {
             Email
           </label>
           <input
+          onChange={onChangeHanlder}
             type="email"
             name="email"
             id="email"
@@ -61,6 +70,7 @@ function SignUp() {
         </label>
         <div className="flex justify-between items-center bg-slate-500 rounded-lg  ">
           <input
+          onChange={onChangeHanlder}
             type={ShowPass ? "text" : "password"}
             name="password"
             id="password"
